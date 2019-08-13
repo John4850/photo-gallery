@@ -1,14 +1,15 @@
 
 
-export function renderImage() {
-    let card = `<div class="card">
+export function renderImage(data) {
+    let card = `<li class="card ${data.keyword}" title="${data.description}"    style="background-image:url('${data.url}')">
 <div class="title">
-<h2>UniWhal</h2>
+<h2>${data.title}</h2>
 </div>
 <div class="horn-count">
-Horns : 1
+Horns : ${data.horns}
 </div>
-</div>`;
+</li>`;
+
     return card;
 
 }

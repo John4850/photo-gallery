@@ -10,37 +10,32 @@
     </head>
     <body>
         <header>
-            <div class="hamburger">
-                HAMBURGER IMAGE
-                <div class="hamburger-dropdown hidden">
-                    <select id="search-by">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
-                    <button type="radio" name="sort-type" id="title">Title</button>
-                    <button type="radio" name="sort-type" id="horns">Horns</button>
+            <div id="hamburger"><img src="./assets/hamburger.png"
+                    id="hamburger-button">
+                <div id="hamburger-dropdown" class="hidden">
+                    <div><h3>Search by keyword:</h3>
+                        <select id="search-by">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select></div>
+                        <h3>Sort by:</h3>
+                       <input type="radio" name="sort-type" id="title">Title</input>
+                       <input type="radio" name="sort-type" id="horns">Horns</input>
+
                 </div>
             </div>
             <h1>Gallery of Horns</h1>
         </header>
         <main>
-            <div class="cardbox">
+            <ul id="cardbox">
 
-                <div class="card">
-                    <div class="title">
-                        <h2>UniWhal</h2>
-                    </div>
-                    <div class="horn-count">
-                        Horns : 1
-                    </div>
-                </div>
-
-            </div>
+            </ul>
 
 
         </main>
         <footer> <h3>&copy Sam and John</h3> </footer>
 
+        <script src="./src/app.js" type="module"></script>
     </body>
 </html>
