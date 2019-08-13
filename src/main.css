@@ -1,18 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Karla|Righteous&display=swap');
 
 body {
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: 15% 1fr 5%;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 1fr 5%;
     max-width: 1000px;
+    height:100vh;
     background-color: blueviolet
 }
 header {
-    display: grid;
-    grid-row: 1;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
     background-color: red;
+
 }
 .cardbox {
-    grid-row: 2;
+    display:flex;
+    flex-wrap:wrap;
     background-color: #84B0D9;
+    grid-area: 2/1/4/2;
+}
+
+.hamburger {
+    background:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right:50px;
+    position:relative;
+
+}
+
+.hamburger-dropdown {
+    background-color: pink;
+    height:100px;
+    width:100px;
+    position:absolute;
+    top: 100%;
+}
+
+footer {
+    background-color:hotpink;
+    width:100%;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 200px;
+    padding:5px;
+    background-image: url('http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg');
+    background-size: contain;
+    border: 1px solid black;
+}
+h2 {
+    margin:1px;
+}
+.hidden {
+    display:none;
 }
