@@ -7,7 +7,7 @@ QUnit.module('Render Image');
 test(' renders a dynamic image card', assert => {
 
     // arrange
-    const expected = `<li class="card narwhal" title="A unicorn and a narwhal nuzzling their horns" style="background-image:url('http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg')">
+    const expected = /*html*/`<li class="card narwhal" title="A unicorn and a narwhal nuzzling their horns" style="background-image:url('http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg')">
 <div class="title">
 <h2>UniWhal</h2>
 </div>

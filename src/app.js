@@ -1,21 +1,48 @@
-import { renderImage } from './render-image.js';
+import ImageList from './ImageList.js';
+import Component from './Component.js';
+import Header from './Header.js';
 import images from './images.js';
-import htmlToDOM from './html-to-DOM.js';
-const cardBox = document.getElementById('cardbox');
-const hamburgerButton = document.getElementById('hamburger-button');
-const hamburgerDropdown = document.getElementById('hamburger-dropdown');
 
-images.forEach((card) => {
-    const renderedCard = renderImage(card);
-    const dom = htmlToDOM(renderedCard);
-    cardBox.appendChild(dom);
+class App extends Component {
 
-});
+    onRender(dom) {
 
-hamburgerButton.addEventListener('click', () => {
-    if(hamburgerDropdown.className === 'hidden') {
-        hamburgerDropdown.classList.remove('hidden');
-    } else {
-        hamburgerDropdown.classList.add('hidden');
+        const header = new Header();
+        const headerDOM = header.renderDOM();
+        dom.prepend(headerDOM);
+
+        const imageList = new ImageList({ images });
+        const imageListDOM = imageList.renderDOM();
+        const mainDiv = dom.querySelector('#main');
+        mainDiv.appendChild(imageListDOM);
+
     }
-});
+
+
+    renderHTML() {
+        return /*html*/`
+            <div>
+               <!-- header goes here --> 
+                <main id="main">
+                    
+                </main>
+
+            </div> 
+        `;
+    }
+
+}
+
+
+
+// const cardBox = document.getElementById('cardbox');
+
+// images.forEach((card) => {
+//     const renderedCard = renderImage(card);
+//     const dom = htmlToDOM(renderedCard);
+//     cardBox.appendChild(dom);
+
+// });
+
+
+export default App;
