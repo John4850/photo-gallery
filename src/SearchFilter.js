@@ -3,10 +3,12 @@ import Component from './Component.js';
 class SearchFilter extends Component {
     onRender(dom) {
         const onSearch = this.props.onSearch;
+        const hideMenu = this.props.hideMenu;
         const selectBox = dom.querySelector('#search-by');
 
         selectBox.addEventListener('input', () => {
             onSearch(selectBox.value);
+            hideMenu();
         });
 
     }

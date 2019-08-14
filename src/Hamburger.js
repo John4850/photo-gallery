@@ -5,16 +5,32 @@ import SortFilter from './SortFilter.js';
 class Hamburger extends Component {
 
     onRender(dom) {
-     
+
         const hamburgerButton = dom.querySelector('#hamburger-button');
         const hamburgerDropdown = dom.querySelector('#hamburger-dropdown');
         const searchFilterBox = dom.querySelector('#search-filter-box');
         const sortFilterBox = dom.querySelector('#sort-filter-box');
-        
-        const searchFilter = new SearchFilter(this.props);
+
+        const hamburgerProps = {
+            images: this.props.images,
+            onSearch: this.props.onSearch,
+            onSort: this.props.onSort,
+            hideMenu: () => {
+                if(hamburgerDropdown.className === 'hidden') {
+                    hamburgerDropdown.classList.remove('hidden');
+                } else {
+                    hamburgerDropdown.classList.add('hidden');
+                }
+            }
+
+        };
+
+        console.log(hamburgerProps);
+        const searchFilter = new SearchFilter(hamburgerProps);
         const searchFilterDOM = searchFilter.renderDOM();
         searchFilterBox.appendChild(searchFilterDOM);
-        const sortFilter = new SortFilter(this.props);
+
+        const sortFilter = new SortFilter(hamburgerProps);
         const sortFilterDOM = sortFilter.renderDOM();
         sortFilterBox.appendChild(sortFilterDOM);
 
@@ -25,6 +41,7 @@ class Hamburger extends Component {
                 hamburgerDropdown.classList.add('hidden');
             }
         });
+
     }
 
     renderHTML() {
