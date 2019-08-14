@@ -27,22 +27,11 @@ class App extends Component {
                     
                 </main>
 
+                <footer> <h3>&copy Sam and John</h3> </footer>
             </div> 
         `;
     }
 
 }
-
-
-
-// const cardBox = document.getElementById('cardbox');
-
-// images.forEach((card) => {
-//     const renderedCard = renderImage(card);
-//     const dom = htmlToDOM(renderedCard);
-//     cardBox.appendChild(dom);
-
-// });
-
 
 export default App;
