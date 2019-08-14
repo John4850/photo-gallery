@@ -23,6 +23,25 @@ class App extends Component {
 
                 const updateProps = { images: filteredHorns };
                 imageList.update(updateProps);
+            },
+            onSort: (sortBy) => {
+                let sortedHorns;
+                if(sortBy === 'title') {
+                    sortedHorns = images.sort((a, b) => {
+                        if(a.title > b.title) {
+                            return 1;
+                        } else {
+                            return -1;
+                        }
+                    });
+
+                } else {
+                    sortedHorns = images.sort((a, b) => {
+                        return a.horns - b.horns;
+                    });
+                }
+                const updateProps = { images: sortedHorns };
+                imageList.update(updateProps);
             }
         };
         const header = new Header(headerProps);

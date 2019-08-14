@@ -2,6 +2,17 @@ import Component from './Component.js';
 
 class SortFilter extends Component {
 
+    onRender(dom) {
+        const onSort = this.props.onSort;
+        const radioInput = dom.querySelectorAll('input');
+        [...radioInput].forEach(input => {
+            input.addEventListener('change', () => {
+                const inputValue = input.id;
+                onSort(inputValue);
+            });
+        });
+
+    }
 
     renderHTML() {
         return /*html*/`
