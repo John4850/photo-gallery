@@ -12,7 +12,7 @@ header {
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: red;
+    background-color: #1D5086;
     padding:10px;
 
 }
@@ -21,6 +21,7 @@ header {
     flex-wrap:wrap;
     justify-content: space-between;
     grid-area: 2/1/4/2;
+    background-color: #E8F4FD;
 }
 
 #hamburger {
@@ -38,7 +39,7 @@ header {
 }
 
 #hamburger-dropdown {
-    background-color: hsla(360, 100%, 90%, 0.95);
+    background-color: #6386AD;
     height:400px;
     width:200px;
     position:absolute;
@@ -46,7 +47,7 @@ header {
 }
 
 footer {
-    background-color:hotpink;
+    background-color: #1D5086;
     width:100%;
 }
 
