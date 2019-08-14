@@ -25,7 +25,6 @@ class Hamburger extends Component {
 
         };
 
-        console.log(hamburgerProps);
         const searchFilter = new SearchFilter(hamburgerProps);
         const searchFilterDOM = searchFilter.renderDOM();
         searchFilterBox.appendChild(searchFilterDOM);

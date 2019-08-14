@@ -1,0 +1,5 @@
+#cardbox {
+    display:flex;
+    flex-wrap:wrap;
+    grid-area: 2/1/4/2;
+}
