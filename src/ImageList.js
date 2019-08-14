@@ -1,4 +1,4 @@
-// import Card from './Card.js';
+import Card from './Card.js';
 import Component from './Component.js';
 
 class ImageList extends Component {
@@ -7,10 +7,9 @@ class ImageList extends Component {
         const images = this.props.images;
 
         images.forEach(image => {
-            // const card = new Card({ image });
-            // const cardDOM = card.renderDOM();
-            // dom.appendChild(cardDOM);
-            console.log(image);
+            const card = new Card({ image: image });
+            const cardDOM = card.renderDOM();
+            dom.appendChild(cardDOM);
         });
     }
 

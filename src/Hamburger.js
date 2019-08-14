@@ -2,18 +2,18 @@ import Component from './Component.js';
 
 class Hamburger extends Component {
 
-    // onRender(dom) {
-    //     const hamburgerButton = dom.getElementById('hamburger-button');
-    //     const hamburgerDropdown = dom.getElementById('hamburger-dropdown');
+    onRender(dom) {
+        const hamburgerButton = dom.querySelector('#hamburger-button');
+        const hamburgerDropdown = dom.querySelector('#hamburger-dropdown');
 
-    //     hamburgerButton.addEventListener('click', () => {
-    //         if(hamburgerDropdown.className === 'hidden') {
-    //             hamburgerDropdown.classList.remove('hidden');
-    //         } else {
-    //             hamburgerDropdown.classList.add('hidden');
-    //         }
-    //     });
-    // }
+        hamburgerButton.addEventListener('click', () => {
+            if(hamburgerDropdown.className === 'hidden') {
+                hamburgerDropdown.classList.remove('hidden');
+            } else {
+                hamburgerDropdown.classList.add('hidden');
+            }
+        });
+    }
 
     renderHTML() {
         return /*html*/`
