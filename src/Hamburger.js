@@ -1,6 +1,7 @@
 import Component from './Component.js';
 import SearchFilter from './SearchFilter.js';
 import SortFilter from './SortFilter.js';
+import images from './images.js';
 
 class Hamburger extends Component {
 
@@ -10,7 +11,7 @@ class Hamburger extends Component {
         const searchFilterBox = dom.querySelector('#search-filter-box');
         const sortFilterBox = dom.querySelector('#sort-filter-box');
         
-        const searchFilter = new SearchFilter();
+        const searchFilter = new SearchFilter({ images });
         const searchFilterDOM = searchFilter.renderDOM();
         searchFilterBox.appendChild(searchFilterDOM);
         const sortFilter = new SortFilter();
