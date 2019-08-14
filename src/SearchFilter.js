@@ -1,19 +1,26 @@
 import Component from './Component.js';
 
 class SearchFilter extends Component {
-    onRender() {
-        // const onSearch
+    onRender(dom) {
+        const onSearch = this.props.onSearch;
+        const selectBox = dom.querySelector('#search-by');
+
+        selectBox.addEventListener('input', () => {
+            onSearch(selectBox.value);
+        });
+
     }
-    
+
     renderHTML() {
         const images = this.props.images;
+
         const keyword = getUniqueKeyword(images);
         const keywordHTML = renderKeywordsHTML(keyword);
 
         return /*html*/`
         <div><h3>Search by keyword:</h3>
         <select id="search-by">
-            <option value="All">All The Horns</option>
+            <option value="all">All The Horns</option>
             ${keywordHTML}
         </select></div>
         `;

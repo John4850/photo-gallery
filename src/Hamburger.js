@@ -1,20 +1,20 @@
 import Component from './Component.js';
 import SearchFilter from './SearchFilter.js';
 import SortFilter from './SortFilter.js';
-import images from './images.js';
 
 class Hamburger extends Component {
 
     onRender(dom) {
+     
         const hamburgerButton = dom.querySelector('#hamburger-button');
         const hamburgerDropdown = dom.querySelector('#hamburger-dropdown');
         const searchFilterBox = dom.querySelector('#search-filter-box');
         const sortFilterBox = dom.querySelector('#sort-filter-box');
         
-        const searchFilter = new SearchFilter({ images });
+        const searchFilter = new SearchFilter(this.props);
         const searchFilterDOM = searchFilter.renderDOM();
         searchFilterBox.appendChild(searchFilterDOM);
-        const sortFilter = new SortFilter();
+        const sortFilter = new SortFilter(this.props);
         const sortFilterDOM = sortFilter.renderDOM();
         sortFilterBox.appendChild(sortFilterDOM);
 

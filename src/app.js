@@ -7,7 +7,25 @@ class App extends Component {
 
     onRender(dom) {
 
-        const header = new Header();
+
+
+        const headerProps = {
+            images: images,
+            onSearch: (keyword) => {
+                let filteredHorns;
+                if(keyword === 'all') {
+                    filteredHorns = images;
+                } else {
+                    filteredHorns = images.filter(image => {
+                        return image.keyword === keyword;
+                    });
+                }
+
+                const updateProps = { images: filteredHorns };
+                imageList.update(updateProps);
+            }
+        };
+        const header = new Header(headerProps);
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
 
@@ -15,7 +33,6 @@ class App extends Component {
         const imageListDOM = imageList.renderDOM();
         const mainDiv = dom.querySelector('#main');
         mainDiv.appendChild(imageListDOM);
-
     }
 
 

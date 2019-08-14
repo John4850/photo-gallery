@@ -4,7 +4,8 @@ import Hamburger from './Hamburger.js';
 class Header extends Component {
 
     onRender(dom) {
-        const hamburger = new Hamburger();
+        const props = this.props;
+        const hamburger = new Hamburger(props);
         const hamburgerDOM = hamburger.renderDOM();
         dom.prepend(hamburgerDOM);
     }
