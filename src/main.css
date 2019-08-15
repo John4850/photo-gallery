@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Karla|Righteous&display=swap');
+
+
+body {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 1fr 5%;
+    max-width: 1000px;
+    height:100vh;
+    margin:auto;
+    
+}
+
+footer {
+    background-color: #1D5086;
+    width:100%;
+}
+
