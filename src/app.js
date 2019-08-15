@@ -6,8 +6,9 @@ import images from './images.js';
 class App extends Component {
 
     onRender(dom) {
-
-
+        let cards = images;
+        let filtered = false;
+        let filteredArray = images;
 
         const headerProps = {
             images: images,
@@ -15,32 +16,39 @@ class App extends Component {
                 let filteredHorns;
                 if(keyword === 'all') {
                     filteredHorns = images;
+                    filtered = false;
                 } else {
                     filteredHorns = images.filter(image => {
                         return image.keyword === keyword;
                     });
+                    filtered = true;
+                    filteredArray = filteredHorns;
                 }
-
                 const updateProps = { images: filteredHorns };
                 imageList.update(updateProps);
+
             },
             onSort: (sortBy) => {
+                if(filtered) {
+                    cards = filteredArray;
+                } else {
+                    cards = images;
+                }
                 let sortedHorns;
                 if(sortBy === 'title') {
-                    sortedHorns = images.sort((a, b) => {
+                    sortedHorns = cards.sort((a, b) => {
                         if(a.title > b.title) {
                             return 1;
                         } else {
                             return -1;
                         }
                     });
-
                 } else {
-                    sortedHorns = images.sort((a, b) => {
+                    sortedHorns = cards.sort((a, b) => {
                         return a.horns - b.horns;
                     });
                 }
-                const updateProps = { images: sortedHorns };
+                const updateProps = { cards: sortedHorns };
                 imageList.update(updateProps);
             }
         };
@@ -67,6 +75,7 @@ class App extends Component {
             </div> 
         `;
     }
+
 
 }
 

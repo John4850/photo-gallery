@@ -3,14 +3,20 @@ import Component from './Component.js';
 class SearchFilter extends Component {
     onRender(dom) {
         const onSearch = this.props.onSearch;
+        const onSort = this.props.onSort;
         const hideMenu = this.props.hideMenu;
         const selectBox = dom.querySelector('#search-by');
 
         selectBox.addEventListener('input', () => {
             onSearch(selectBox.value);
+            const selected = document.querySelectorAll('input');
+            [...selected].forEach(button => {
+                if(button.checked) {
+                    onSort(document.querySelector('input:checked').value);
+                }
+            });
             hideMenu();
         });
-
     }
 
     renderHTML() {

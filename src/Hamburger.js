@@ -16,11 +16,8 @@ class Hamburger extends Component {
             onSearch: this.props.onSearch,
             onSort: this.props.onSort,
             hideMenu: () => {
-                if(hamburgerDropdown.className === 'hidden') {
-                    hamburgerDropdown.classList.remove('hidden');
-                } else {
-                    hamburgerDropdown.classList.add('hidden');
-                }
+                hamburgerDropdown.classList.add('hidden');
+
             }
 
         };

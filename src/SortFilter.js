@@ -7,7 +7,7 @@ class SortFilter extends Component {
         const hideMenu = this.props.hideMenu;
         const radioInput = dom.querySelectorAll('input');
         [...radioInput].forEach(input => {
-            input.addEventListener('change', () => {
+            input.addEventListener('click', () => {
                 const inputValue = input.id;
                 onSort(inputValue);
                 hideMenu();
